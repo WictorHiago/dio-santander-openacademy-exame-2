@@ -4,21 +4,26 @@ import java.util.Scanner;
 
 public class Main {
 
-    public int soma(int a, int b) {
-        return a + b;
+    Scanner scanner = new Scanner(System.in);
+    Count count = new Count();
+
+    public Main() {
+        this.scanner = scanner;
+        this.count = count;
     }
 
-    public void saudacao () {
-        System.out.println("Por favor, digite seu nome: ");
-        Scanner scanner = new Scanner(System.in);
-        String nome = scanner.nextLine();
-        System.out.println("Ola, " + nome + "!" + "\nBom dia!");
+    public void start() {
+        System.out.println("Please, insert a number: ");
+        int numberA = this.scanner.nextInt();
 
+        System.out.println("Please, insert another number: ");
+        int numberB = this.scanner.nextInt();
+
+        this.count.run(numberA, numberB);
     }
 
-    public static void main(String[] args) {
-
+    public static void main (String[] args){
         Main main = new Main();
-        main.saudacao();
+        main.start();
     }
 }
